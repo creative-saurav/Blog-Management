@@ -55,8 +55,8 @@
                     </div>
                 </a>
                  <ul class="first-sub-menu">
-                     <li class="sidebar-second-li {{ request()->is('admin/blog*')?'active':''}}"><a href="{{route('admin.blog')}}"> {{get_phrase('Blog')}} </a></li>
-                    <li class="sidebar-second-li {{ request()->is('admin/blog/category*')?'active':''}}"><a href="{{route('admin.blog.category')}}"> {{get_phrase('Category')}} </a></li>
+                     <li class="sidebar-second-li {{ request()->is('admin/blog')?'active':''}}"><a href="{{route('admin.blog')}}"> {{get_phrase('Blog')}} </a></li>
+                    <li class="sidebar-second-li {{ request()->is('admin/blog/category')?'active':''}}"><a href="{{route('admin.blog.category')}}"> {{get_phrase('Category')}} </a></li>
                 </ul>
             </li>
             <li class="sidebar-first-li first-li-have-sub  {{ request()->is('admin/system_settings*') || request()->is('admin/smtp*') ?'active':''}}">

@@ -25,17 +25,20 @@
                 <tr>
                     <th> {{get_phrase('ID')}} </th>
                     <th> {{get_phrase('Name')}} </th>
-                    {{-- <th> {{get_phrase('Number Blogs')}} </th> --}}
+                    <th> {{get_phrase('Number Blogs')}} </th>
                     <th> {{get_phrase('Action')}} </th>
                 </tr>
             </thead>
             <tbody>
                 @php $num = 1 @endphp
                 @foreach ($categories as $category)
+                @php
+                    $blogs = App\Models\Blog::where('category_id', $category->id)->get();
+                 @endphp
                 <tr>
                     <td> {{$num++}} </td>
                     <td> {{$category->name}} </td>
-                    {{-- <td> {{count($blogs)}} {{get_phrase('Blogs')}} </td> --}}
+                    <td> {{count($blogs)}} {{get_phrase('Blogs')}} </td>
                     <td> 
                         <div class="dropdown ol-icon-dropdown">
                             <button class="px-2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
